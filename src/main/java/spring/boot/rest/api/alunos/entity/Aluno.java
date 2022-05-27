@@ -1,4 +1,4 @@
-package br.mp.mprj.techday.alunos.entity;
+package spring.boot.rest.api.alunos.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

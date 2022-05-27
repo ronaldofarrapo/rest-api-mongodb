@@ -1,7 +1,7 @@
-package br.mp.mprj.techday.alunos.repository;
+package spring.boot.rest.api.alunos.repository;
 
-import br.mp.mprj.techday.alunos.DatabaseIntegrationTestBase;
-import br.mp.mprj.techday.alunos.entity.Aluno;
+import spring.boot.rest.api.alunos.DatabaseIntegrationTestBase;
+import spring.boot.rest.api.alunos.entity.Aluno;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

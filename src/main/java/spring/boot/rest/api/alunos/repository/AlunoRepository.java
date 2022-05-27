@@ -1,6 +1,6 @@
-package br.mp.mprj.techday.alunos.repository;
+package spring.boot.rest.api.alunos.repository;
 
-import br.mp.mprj.techday.alunos.entity.Aluno;
+import spring.boot.rest.api.alunos.entity.Aluno;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

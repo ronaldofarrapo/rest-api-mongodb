@@ -1,7 +1,7 @@
-package br.mp.mprj.techday.alunos.service.impl;
+package spring.boot.rest.api.alunos.service.impl;
 
-import br.mp.mprj.techday.alunos.entity.Aluno;
-import br.mp.mprj.techday.alunos.repository.AlunoRepository;
+import spring.boot.rest.api.alunos.entity.Aluno;
+import spring.boot.rest.api.alunos.repository.AlunoRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
