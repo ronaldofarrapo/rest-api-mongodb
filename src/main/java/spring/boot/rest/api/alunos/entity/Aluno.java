@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Builder
@@ -15,10 +17,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "aluno")
-public class Aluno {
+public class Aluno implements Serializable {
+
+    private static final long serialVersionUID = 5016284151239769022L;
 
     @MongoId(FieldType.OBJECT_ID)
     private String id;
+    @NotNull
     private String nome;
     private String cpf;
     private String endereco;
