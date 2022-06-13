@@ -27,7 +27,9 @@ class AlunoRepositoryIntegrationTest extends DatabaseIntegrationTestBase {
         aluno = Aluno.builder()
                 .nome("Guedes")
                 .cpf("00064588874")
+                .numeroCartaoCredito("3654585457854215")
                 .dataCadastro(LocalDateTime.now())
+                .matricula("2022.00001")
                 .endereco("Rua Conde de Bonfim")
                 .build();
     }
@@ -51,7 +53,19 @@ class AlunoRepositoryIntegrationTest extends DatabaseIntegrationTestBase {
 
         ConstraintViolationException exception = assertThrows(ConstraintViolationException.class, () -> alunoRepository.save(this.aluno));
 
-        String expectedMessage = "nome: não deve ser nulo";
+        String expectedMessage = "nome: não deve estar em branco";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
+    @Test
+    void numeroCartaoNaoInformado(){
+        this.aluno.setNumeroCartaoCredito(null);
+
+        ConstraintViolationException exception = assertThrows(ConstraintViolationException.class, () -> alunoRepository.save(this.aluno));
+
+        String expectedMessage = "numeroCartaoCredito: não deve estar em branco";
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
