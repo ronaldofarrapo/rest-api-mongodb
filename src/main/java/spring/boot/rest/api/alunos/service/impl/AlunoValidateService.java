@@ -17,13 +17,17 @@ public class AlunoValidateService implements IAlunoValidateService {
 
     @Override
     public void validarCpfDuplicado(String cpf) {
-        Optional<Aluno> expected = alunoRepository.findByCpf(cpf);
-        expected.ifPresent(aluno -> {throw new BusinessException("Já existe um aluno com o CPF informado.");});
+        Optional<Aluno> aluno = alunoRepository.findByCpf(cpf);
+        aluno.ifPresent(a -> {
+            throw new BusinessException("Já existe um aluno com o CPF informado.");
+        });
 
     }
 
     @Override
-    public void validarCpfInvalido(String cpf) {
-
+    public void validarTamanhoCpf(String cpf) {
+        if(cpf.length() != 11){
+            throw new BusinessException("CPF inválido.");
+        }
     }
 }
