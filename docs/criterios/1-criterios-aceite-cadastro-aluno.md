@@ -14,7 +14,7 @@
 **CPF informado é inválido**  
 - A mensagem de falha é retornada. "CPF inválido."  
 
-**CPF informado já existe**
+**CPF duplicado**
 - A mensagem de falha é retornada. "Já existe um aluno com o CPF informado."
 
 **Cartão de Crédito não informado**   
