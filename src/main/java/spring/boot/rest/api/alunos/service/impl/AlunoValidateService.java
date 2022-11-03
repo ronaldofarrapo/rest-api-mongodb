@@ -13,6 +13,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AlunoValidateService implements IAlunoValidateService {
 
+    private static final int TAMANHO_CPF = 11;
+
     private final AlunoRepository alunoRepository;
 
     @Override
@@ -26,7 +28,7 @@ public class AlunoValidateService implements IAlunoValidateService {
 
     @Override
     public void validarTamanhoCpf(String cpf) {
-        if(cpf.length() != 11){
+        if(cpf.length() != TAMANHO_CPF){
             throw new BusinessException("CPF inválido.");
         }
     }
